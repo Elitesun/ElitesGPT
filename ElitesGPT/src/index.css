@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Fira+Code:wght@300..700&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-poppins: "Poppins", serif;
+  --font-anton: "Anton", sans-serif;
+}
+
+.result {
+  padding: 0px 5%;
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+.result::-webkit-scrollbar {
+  display: none;
+}
+
+.result-title {
+  margin: 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.loader-hr {
+  border: none;
+  height: 6px;
+  margin-top: 3px;
+  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+  background-size: 200% 100%;
+  border-radius: 10px;
+  animation: loading 1.5s infinite ease-in-out;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.ai-response {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #333;
+}
+
+.ai-response p {
+  margin-bottom: 1.5rem;
+}
+
+.ai-response strong {
+  font-weight: 600;
+  color: #1a73e8;
+}
+
+.ai-response code {
+  background-color: #f3f4f6;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+}
+
+.ai-response ul,
+.ai-response ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.ai-response li {
+  margin-bottom: 0.5rem;
+}
+
+.ai-response blockquote {
+  border-left: 4px solid #1a73e8;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: #666;
+}
