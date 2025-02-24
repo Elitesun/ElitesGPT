@@ -1,11 +1,10 @@
 import "./index.css";
-import React from "react";
 import Sidebar from "./Components/Sider/Sidebar";
 import Main from "./Components/Main";
 
 const App = () => {
   return (
-    <div className="flex">
+    <div className="flex relative w-full h-screen overflow-hidden bg-white">
       <Sidebar />
       <Main />
     </div>
