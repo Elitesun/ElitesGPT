@@ -4,11 +4,10 @@ import { IoMdHelpCircleOutline } from "react-icons/io";
 import { FaClockRotateLeft } from "react-icons/fa6";
 import { CiSettings } from "react-icons/ci";
 import { Context } from "../../context/Context";
-import React from "react";
 import Top from "./Top";
 import History from "./History";
 
-const Sidebar = () => {
+const SidebarTemp = () => {
   const [open, setOpen] = useState(false);
   const { newChat } = useContext(Context);
 
@@ -19,48 +18,41 @@ const Sidebar = () => {
   return (
     <>
       <div
-        className={`sidebar fixed lg:relative min-h-screen ${
-          open ? "w-64 translate-x-0" : "w-16 lg:translate-x-0 -translate-x-full lg:flex lg:flex-col lg:items-center"
-        } p-5 bg-[#f0f4f9] transition-all duration-300 z-50 shadow-lg lg:shadow-none`}
+        className={`sidebar fixed md:relative min-h-screen z-50 ${
+          open ? "w-[280px] md:w-[300px]" : "w-16"
+        } p-2 md:p-4 bg-[#f0f4f9] transition-all duration-300 shadow-lg md:shadow-none`}
       >
-        <div className="lg:hidden absolute -right-10 top-5 bg-[#f0f4f9] p-2 rounded-r-lg shadow-lg cursor-pointer"
-          onClick={handleToggle}
-        >
-          <div className={`w-6 h-0.5 bg-gray-600 transition-all duration-300 ${open ? 'rotate-45 translate-y-1.5' : ''}`}></div>
-          <div className={`w-6 h-0.5 bg-gray-600 my-1 ${open ? 'opacity-0' : ''}`}></div>
-          <div className={`w-6 h-0.5 bg-gray-600 transition-all duration-300 ${open ? '-rotate-45 -translate-y-1.5' : ''}`}></div>
-        </div>
         {/* -------------------------Top ----------------------------*/}
-
-        <div onClick={handleToggle}>
+        <div onClick={handleToggle} className="cursor-pointer">
           <Top />
         </div>
 
         {/* -------------------------Start a new chat section ----------------------------*/}
-
         <div
-          className="inline-flex items-center gap-2 mt-13 ml-1 bg-gray-200 rounded-xl p-3 hover:bg-neutral-400 cursor-pointer"
+          className="inline-flex items-center gap-2 mt-6 w-full bg-gray-200 rounded-xl p-2.5 hover:bg-neutral-300 cursor-pointer transition-colors"
           onClick={() => newChat()}
         >
-          <BsChatRightDots className="text-black size={20} " />
-          {open && <h3 className="font-Poppins">New Chat</h3>}
+          <BsChatRightDots className="text-black min-w-[20px]" size={20} />
+          {open && <h3 className="font-Poppins text-sm whitespace-nowrap overflow-hidden">New Chat</h3>}
         </div>
 
         {/* -------------------------Recent History ----------------------------*/}
-
-        {open && <History />}
+        {open && <div className="mt-6"><History /></div>}
 
         {/* -------------------------Page Bottom ----------------------------*/}
-        <div className="fixed top-155">
-          <div className="flex flex-col gap-5">
-            <div className="flex items-center gap-2">
-              <IoMdHelpCircleOutline size={20} /> {open && <span>Help</span>}
+        <div className="absolute bottom-5 left-0 w-full px-4">
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3 cursor-pointer hover:bg-gray-200 p-2 rounded-lg transition-colors">
+              <IoMdHelpCircleOutline size={20} className="min-w-[20px]" />
+              {open && <span className="text-sm whitespace-nowrap">Help</span>}
             </div>
-            <div className="flex items-center gap-2">
-              <FaClockRotateLeft size={20} /> {open && <span>Activity</span>}
+            <div className="flex items-center gap-3 cursor-pointer hover:bg-gray-200 p-2 rounded-lg transition-colors">
+              <FaClockRotateLeft size={20} className="min-w-[20px]" />
+              {open && <span className="text-sm whitespace-nowrap">Activity</span>}
             </div>
-            <div className="flex items-center gap-2">
-              <CiSettings size={20} /> {open && <span>Settings</span>}
+            <div className="flex items-center gap-3 cursor-pointer hover:bg-gray-200 p-2 rounded-lg transition-colors">
+              <CiSettings size={20} className="min-w-[20px]" />
+              {open && <span className="text-sm whitespace-nowrap">Settings</span>}
             </div>
           </div>
         </div>
@@ -69,4 +61,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SidebarTemp;
