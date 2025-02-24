@@ -18,8 +18,9 @@ const History = () => {
         <div className="flex ml-5 hover:bg-neutral-300 rounded-full">
           {history.map((item, index) => {
             return (
-              <h4 onClick={() => loadPrompt(item)} key={index}>
+              <h4 onClick={() => loadPrompt(item)}>
                 🗯 {item.slice(0, 10)}...
+                <br />
               </h4>
             );
           })}

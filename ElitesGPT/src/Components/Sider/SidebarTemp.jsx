@@ -18,11 +18,9 @@ const SidebarTemp = () => {
 
   return (
     <>
-      <div
-        className={`sidebar min-h-screen ${
+      <div className={`sidebar min-h-screen ${
           open ? "w-1/6" : "w-1/15 flex flex-col items-center"
-        } p-5 bg-[#f0f4f9] transition-all duration-300`}
-      >
+        } p-5 bg-[#f0f4f9] transition-all duration-300`}>
         {/* -------------------------Top ----------------------------*/}
 
         <div onClick={handleToggle}>

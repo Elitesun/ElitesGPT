@@ -40,7 +40,7 @@ const Main = () => {
         {!showResult ? (
           <>
             {/* -------------------------Greeting ---------------------------- */}
-            <div className="m-auto max-w-[900px]">
+            <div className="m-auto max-w-full">
               <div className="my-[50px]  text-[#c4c7c5] font-[500px] ">
                 <h2 className="bg-linear-[25deg,red_5%,indigo_95%] bg-clip-text text-5xl font-bold text-transparent ">
                   Hello, Dev.
@@ -50,7 +50,7 @@ const Main = () => {
 
               {/* -------------------------Suggestions ---------------------------- */}
               <div className="grid grid-cols-3 gap-5 text-[#000000] p-20">
-                <div className="h-[140px] p-3 bg-neutral-200 rounded-[10px] relative cursor-pointer hover:bg-neutral-300">
+                <div className="h-auto p-3 bg-neutral-200 rounded-[10px] relative cursor-pointer hover:bg-neutral-300">
                   <p>Suggest beautiful places to go on vacation</p>
                   <FaQuestionCircle
                     size={20}
@@ -127,7 +127,7 @@ const Main = () => {
               </div>
             </form>
           </div>
-          <div className="mb-4 mt-4 text-sm text-neutral-500 text-center">
+          <div className="mb-4 mt-4 text-sm text-neutral-500 text-center absolute bottom-0">
             <p>
               ElitesGPT can make mistakes, always verify the information...
               <br />
