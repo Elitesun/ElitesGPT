@@ -42,7 +42,7 @@ const ContextProvider = (props) => {
         newResponse += "<b>" + responseArray[i] + "</b>";
       }
     }
-    let newResponse2 = newResponse.split("*").join("</br>");
+    let newResponse2 = newResponse.split("*").join("");
     let finalResponse = newResponse2.split(" ");
     for (let i = 0; i < finalResponse.length; i++) {
       const nextWord = finalResponse[i];
