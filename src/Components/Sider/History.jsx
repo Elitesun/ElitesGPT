@@ -13,15 +13,14 @@ const History = () => {
       <div className="mt-20">
         <div className=" text-xl border-b border-gray-300 font-poppins">
           Recent
-        </div>{" "}
+        </div>
         <br />
-        <div className="flex ml-5 hover:bg-neutral-300 rounded-full">
+        <div className=" flex flex-col ml-5">
           {history.map((item, index) => {
             return (
-              <h4 onClick={() => loadPrompt(item)}>
-                🗯 {item.slice(0, 10)}...
-                <br />
-              </h4>
+              <div onClick={() => loadPrompt(item)} className="cursor-pointer">
+                <h4> {item.slice(0, 10)}...</h4>
+              </div>
             );
           })}
         </div>
