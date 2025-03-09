@@ -18,18 +18,19 @@ const SidebarTemp = () => {
   return (
     <>
       <div
-        className={`sidebar fixed md:relative min-h-screen z-50 ${
-          open ? "w-[200px] md:w-[300px]" : "w-17"
-        } p-2 md:p-4 bg-[#f0f4f9] transition-all duration-300 shadow-lg md:shadow-none`}
+        className={`sidebar fixed md:relative min-h-screen z-50 
+    transition-all duration-300 shadow-lg md:shadow-none
+    bg-[#f0f4f9] p-2 md:p-4 
+    ${
+      open
+        ? "w-[200px] max-w-[200px] opacity-100 visible"
+        : "w-0 max-w-0 opacity-0 invisible md:w-[200px] md:invisible"
+    } 
+    overflow-hidden`}
       >
-        {/* -------------------------Top ----------------------------*/}
-        <div onClick={handleToggle} className="cursor-pointer">
-          <Top />
-        </div>
-
         {/* -------------------------Start a new chat section ----------------------------*/}
         <div
-          className="inline-flex items-center gap-2 mt-6 bg-gray-200 rounded-xl p-2.5 hover:bg-neutral-300 cursor-pointer transition-colors"
+          className="inline-flex items-center gap-2 mt-10 bg-gray-200 rounded-xl p-2.5 hover:bg-neutral-300 cursor-pointer transition-colors"
           onClick={() => newChat()}
         >
           <BsChatRightDots className="text-black min-w-[20px]" size={20} />
@@ -68,6 +69,10 @@ const SidebarTemp = () => {
             </div>
           </div>
         </div>
+      </div>
+      {/* -------------------------Top ----------------------------*/}
+      <div onClick={handleToggle} className="cursor-pointer z-100">
+        <Top />
       </div>
     </>
   );
