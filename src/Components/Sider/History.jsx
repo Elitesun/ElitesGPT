@@ -18,7 +18,11 @@ const History = () => {
         <div className=" flex flex-col ml-5">
           {history.map((item, index) => {
             return (
-              <div onClick={() => loadPrompt(item)} className="cursor-pointer">
+              <div
+                key={index}
+                onClick={() => loadPrompt(item)}
+                className="cursor-pointer"
+              >
                 <h4> {item.slice(0, 10)}...</h4>
               </div>
             );

@@ -88,3 +88,10 @@
     margin-left: 1rem;
   }
 }
+
+@media (max-width: 768px) {
+  .suggestions {
+    margin-top: 0rem;
+    gap: 1rem;
+  }
+}

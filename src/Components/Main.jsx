@@ -54,7 +54,7 @@ const Main = () => {
               </div>
 
               {/* -------------------------Suggestions ---------------------------- */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-30 suggestions">
                 <div className="bg-neutral-200 rounded-lg p-4 relative min-h-[100px] cursor-pointer hover:bg-neutral-300 transition-colors">
                   <p className="text-sm md:text-base pr-6">
                     Suggest beautiful places to go on vacation
